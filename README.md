@@ -47,16 +47,23 @@ cd ./overleaf-toolkit
 config目录三份配置文件中比较重要的配置项如下：
 
 overleaf.rc
+
 SHARELATEX_PORT 默认为 80 端口，但这个一般会被系统各大应用抢占，如果和你的有冲突，建议修改为 1024~65535 之间的一个数值。
 
 variables.env
+
 SHARELATEX_APP_NAME 这个名字可以自定义，没什么特别的影响。
+
 SHARELATEX_SITE_URL 这个会影响生成用户激活链接里的 URL 的域名地址，建议根据自己的实际情况修改。注意，该域名必须能够被有效解析到服务器，否则请填写 ip 地址作为替代。
+
 SHARELATEX_NAV_TITLE 标签页里的标题，可以自定义。
+
 SHARELATEX_HEADER_IMAGE_URL 为了和 overleaf.com 的区分，我把这个 URL 指向了我们学校的 logo
+
 SHARELATEX_LEFT_FOOTER 显示在注册界面的提示信息，由于没有实际的注册功能，因此需要显示一段文字说明管理员的联系方式，就是这个字段的配置内容。
 
 version
+
 不需要更改。
 
 bin目录docker-compose.base.yml修改image为目标镜像
