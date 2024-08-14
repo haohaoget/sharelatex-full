@@ -19,9 +19,8 @@ Have a look at the [Dockerfile](./Dockerfile) to find out more.
 ## Installation
 
 ### Overleaf Toolkit 
-部署[参考]
+部署[参考](https://sspai.com/post/83982)
 
-(https://sspai.com/post/83982)
 国内服务器，先设置docker的加速代理。然后
 
 ```
