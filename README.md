@@ -20,23 +20,30 @@ Have a look at the [Dockerfile](./Dockerfile) to find out more.
 
 ### Overleaf Toolkit
 国内服务器，先设置docker的加速代理。然后
+
 '''
 docker pull tuetenk0pp/sharelatex-full
 '''
+
 第二步安装docker compose 最新版本到系统中，使用系统默认的包管理器方式安装能够很好地自动配置守护进程：
+
 '''
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 '''
+
 第三步，使用非管理员权限用户直接与 docker 守护进程通信，每次使用 docker 命令的时候不必记得加上 sudo 关键字，在 docker 安装文档里其实也有说明。个人来说比较推荐配置这一步，因为大部分教程默认没有 sudo 提权命令，配置非管理员权限用户能更好地避开一下不必要的麻烦。
+
 '''
 sudo groupadd docker
 sudo usermod -aG docker $USER
 '''
+
 '''
 git clone https://github.com/overleaf/toolkit.git ./overleaf-toolkit
 cd ./overleaf-toolkit
 ./bin/init
 '''
+
 config目录三份配置文件中比较重要的配置项如下：
 
 overleaf.rc
@@ -53,13 +60,16 @@ version
 不需要更改。
 
 bin目录docker-compose.base.yml修改image为目标镜像
+
 '''
 sharelatex:
     restart: always
     image: tuetenk0pp/sharelatex-full
     container_name: sharelatex
 '''
+
 #需要加速镜像
+
 '''
 ./bin/up 
 ./bin/start
