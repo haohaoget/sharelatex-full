@@ -83,6 +83,21 @@ sharelatex:
 ./bin/up 
 ./bin/start
 ```
+### 字体安装
+将字体传输到主机winfonts目录下，cd该目录
+
+把压缩文件传到sharelatex容器的/usr/share/fonts/目录下
+
+    docker cp winfonts sharelatex:/usr/share/fonts/
+    
+进入字体目录安装字体
+    cd /usr/share/fonts/winfonts
+    mkfontscale
+    mkfontdir
+    fc-cache -fv
+
+检查确认中文字体安装成功
+    fc-list :lang=zh-cn
 
 ### Docker Compose
 
